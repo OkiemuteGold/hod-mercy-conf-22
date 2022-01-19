@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  --textColor: #6c757d;
+  --darkturquoise: darkturquoise;
+  --darkgoldenrod: darkgoldenrod;
+  --darkgreen: darkgreen;
+  --darkred: darkred;
+  --fontNunito: "Nunito", sans-serif;
+  --fontLato: "Lato", sans-serif;
+}
+
+*,
+*::before {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-family: var(--fontLato);
+
+  background-image: url("../img/0.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e2e2e2;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 6, 6, 0.9);
+}
+
+body * {
+  z-index: 1;
+}
+
+.new_year {
+  font-size: 6.5rem;
+  font-weight: 600;
+  opacity: 0.8;
+  background: rgba(10, 6, 6, 0.9);
+  color: #e2e2e2;
+  letter-spacing: 0.5px;
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+}
+
+h1 {
+  font-family: var(--fontNunito);
+  font-size: 5rem;
+  margin: -80px 0 44px;
+  text-transform: capitalize;
+}
+
+.link_desc {
+  margin-top: 2.75rem;
+  padding: 5px;
+  line-height: 1.5rem;
+}
+
+.link_desc span {
+  font-style: italic;
+}
+
+h1,
+.link_desc a {
+  background: linear-gradient(
+      65deg,
+      #bc20d8 -40.75%,
+      #31bd8c 43.81%,
+      #bc20d8 130.37%,
+      #3674c0 100.37%
+    ),
+    -webkit-linear-gradient(90deg, #bc20d8 -40.75%, #31bd8c 43.81%, #bc20d8
+          130.37%, #3674c0 100.37%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link_desc a {
+  transition: 0.3s ease;
+  border-bottom: 1px solid var(--textColor);
+}
+
+.link_desc a:hover {
+  text-decoration: none;
+  border-bottom-color: transparent;
+}
+
+.countdown {
+  display: none;
+  letter-spacing: 0.025rem;
+  border-radius: 8px;
+  box-shadow: inset 1px 1px 10px var(--textColor);
+  padding: 10px 8px;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.time h2 {
+  font-size: 3.75rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.time small {
+  font-size: 1.175rem;
+}
+
+.countdown .time:nth-child(1) small {
+  color: var(--darkturquoise);
+}
+
+.countdown .time:nth-child(2) small {
+  color: var(--darkgoldenrod);
+}
+
+.countdown .time:nth-child(3) small {
+  color: var(--darkgreen);
+}
+
+.countdown .time:nth-child(4) small {
+  color: var(--darkred);
+}
+
+@media screen and (max-width: 1035px) {
+  .new_year {
+    font-size: 5.75rem;
+  }
+
+  h1 {
+    font-size: 3.725rem;
+    margin-bottom: 50px;
+  }
+
+  .time h2 {
+    font-size: 3rem;
+  }
+
+  .time small {
+    font-size: 1.075rem;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .new_year {
+    font-size: 4.5rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  .time h2 {
+    font-size: 2.5rem;
+  }
+
+  .time small {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .new_year {
+    font-size: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  .time {
+    margin: 0.5rem;
+  }
+
+  .time h2 {
+    font-size: 2.25rem;
+  }
+
+  .time small {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .new_year {
+    font-size: 2.75rem;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .link_desc {
+    margin-top: 1.75rem;
+  }
+}
