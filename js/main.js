@@ -84,7 +84,7 @@ body.style.backgroundImage = `url(../img/${count}.jpeg`;
 
 setInterval(() => {
     count += 1;
-    if (count > 4) {
+    if (count > 5) {
         count = 0;
     }
     body.style.backgroundImage = `url(../img/${count}.jpeg`;
