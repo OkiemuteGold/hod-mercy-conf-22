@@ -32,7 +32,7 @@ body {
   padding-right: 40px;
   font-family: var(--fontLato);
 
-  background-image: url("../images/0.jpeg");
+  /* background-image: url("../images/0.jpeg"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

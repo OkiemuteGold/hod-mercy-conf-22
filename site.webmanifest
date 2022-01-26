@@ -1,6 +1,7 @@
 {
     "name": "HOD Conf..",
     "short_name": "HOD Conf..",
+    "description": "HOD Annual Mercy Conference 2022, Themed: Fullness of Joy",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,5 +16,8 @@
     ],
     "theme_color": "#f6bdad",
     "background_color": "#f6bdad",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "any",
+    "start_url": "/",
+    "scope": "/"
 }

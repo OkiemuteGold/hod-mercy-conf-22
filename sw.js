@@ -1,8 +1,8 @@
 const cacheName = 'v1';
 const cacheAssets = [
     '/',
-    '/js/main.js',
     '/css/main.css',
+    '/js/main.js',
     '/images/',
     '/apple-touch-icon.png',
     '/android-chrome-192x192.png',
@@ -80,9 +80,7 @@ self.addEventListener('fetch', (event) => {
 //           './sw-test/app.js',
 //           './sw-test/image-list.js',
 
-
-//           ...
-//           // include other new resources for the new version...
+//           // ... include other new resources for the new version...
 
 //         ]);
 //       })
@@ -94,12 +92,12 @@ self.addEventListener('fetch', (event) => {
 //     var cacheKeeplist = ['v2'];
 
 //     event.waitUntil(
-//       caches.keys().then((keyList) => {
-//         return Promise.all(keyList.map((key) => {
-//           if (cacheKeeplist.indexOf(key) === -1) {
-//             return caches.delete(key);
-//           }
-//         }));
-//       })
+//         caches.keys().then((keyList) => {
+//             return Promise.all(keyList.map((key) => {
+//                 if (cacheKeeplist.indexOf(key) === -1) {
+//                     return caches.delete(key);
+//                 }
+//             }));
+//         })
 //     );
-//   });
+// });
