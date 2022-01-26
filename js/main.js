@@ -98,27 +98,39 @@ let countdownInterval = setInterval(() => {
 }, 1000);
 
 let count = 0;
-body.style.backgroundImage = `url(../img/${count}.jpeg`;
+body.style.backgroundImage = `url(../images/${count}.jpeg`;
 
 setInterval(() => {
     count += 1;
     if (count > 5) {
         count = 0;
     }
-    body.style.backgroundImage = `url(../img/${count}.jpeg`;
+    body.style.backgroundImage = `url(../images/${count}.jpeg`;
 
 }, 6500);
 
 // switch title and theme
-function changeTitle() {
-    // run every 4.5 seconds
-    setInterval(() => {
-        title.innerHTML = "Countdown To 2022 Annual Mercy Conference" ? `Theme: <br> Fullness of Joy` : `Countdown To 2022 <br> Annual Mercy Conference`;
-    }, 4500);
-}
-changeTitle();
+// function changeTitle() {
+//     // run every 4.5 seconds
+//     setInterval(() => {
+//         title.innerHTML = "Countdown To 2022 Annual Mercy Conference" ? `Theme: <br> Fullness of Joy` : `Countdown To 2022 <br> Annual Mercy Conference`;
+//     }, 4500);
+// }
+// changeTitle();
 
 // run every 9 seconds
 let changeTitleInterval = setInterval(() => {
-    title.innerHTML = `Countdown To 2022 <br> Annual Mercy Conference`
+    // title.innerHTML = `Countdown To 2022 <br> Annual Mercy Conference`
 }, 9000);
+
+
+/* PWA ------------------ */
+/* service worker */
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
+        .then((reg) => {
+            console.log('Service Worker Registration Successful. Scope is ' + reg.scope);
+        }).catch(error => {
+            console.log('Service Worker Registration Failed with ' + error);
+        });
+};
