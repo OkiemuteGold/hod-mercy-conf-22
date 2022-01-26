@@ -40,7 +40,7 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (event) => {
     let url = event.request.url;
-    console.log(url);
+    // console.log(url);
 
     // check if request is made by chrome extensions or web page
     // if request is made from web page url, must contain http.. skip if not made with http protocol

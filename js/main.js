@@ -125,7 +125,7 @@ let changeTitleInterval = setInterval(() => {
 
 
 /* PWA ------------------ */
-/* service worker */
+/* register service worker */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js', { scope: './' })
         .then((reg) => {
@@ -134,3 +134,62 @@ if ('serviceWorker' in navigator) {
             console.log('Service Worker Registration Failed with ' + error);
         });
 };
+
+/* obtain permission to send notification */
+const permission = window.Notification.requestPermission();
+
+if (Notification.permission == 'granted') {
+    navigator.serviceWorker.ready.then((registration) => {
+        // registration.showNotification(showLocalNotification(title, [options]));
+
+        /* show notification content every 5 seconds */
+        setInterval(() => {
+            showNotificationContents(registration);
+        }, 1000 * 60 * 60 * 12);
+    });
+};
+
+function showNotificationContents(registration) {
+    registration.showNotification('Mercy Conference', {
+        body: `
+                Please remember to attend the Annual Mercy Conference. Comes up Tuesday, February 01, 2022. Time: 6:00pm.
+            `,
+        icon: '../android-chrome-192x192.png',
+        image: '../images/2.jpeg',
+        vibrate: [200, 100, 200, 100, 200, 100, 200],
+        actions: [
+            {
+                title: 'Register to attend',
+                action: 'register',
+                icon: '../android-chrome-192x192.png',
+                url: 'https://conferences.householdofdavid.org/'
+            }
+        ],
+        timestamp: "6:00pm",
+        tag: 'mercy-conference-reminder'
+    });
+}
+
+/* listen for event on notification */
+self.addEventListener('notificationclick', (event) => {
+    // console.log('On notification click: ', event.notification.tag);
+    event.notification.close();
+
+    // This looks to see if the current is already open and
+    // focuses if it is
+    event.waitUntil(clients.matchAll({
+        type: "window"
+    }).then(function (clientList) {
+        for (var i = 0; i < clientList.length; i++) {
+            var client = clientList[i];
+            if (client.url == '/' && 'focus' in client)
+                return client.focus();
+        }
+        if (clients.openWindow)
+            return clients.openWindow('/');
+    }));
+
+    // if (event.action === 'register') {
+    //     const rootUrl = new URL('./', location).href;
+    // }
+});
