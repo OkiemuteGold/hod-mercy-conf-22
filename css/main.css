@@ -1,15 +1,8 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 :root {
   --textColor: #6c757d;
-  --darkturquoise: darkturquoise;
-  --darkgoldenrod: darkgoldenrod;
-  --darkgreen: darkgreen;
-  --darkred: darkred;
-  --fontNunito: "Nunito", sans-serif;
-  --fontLato: "Lato", sans-serif;
 }
 
 *,
@@ -30,7 +23,7 @@ body {
   height: 100vh;
   padding-left: 40px;
   padding-right: 40px;
-  font-family: var(--fontLato);
+  font-family: "Lato", sans-serif;
 
   /* background-image: url("../images/0.jpeg"); */
   background-position: center;
@@ -74,7 +67,7 @@ body * {
 }
 
 h1 {
-  font-family: var(--fontNunito);
+  font-family: "Nunito", sans-serif;
   font-size: 5rem;
   margin: -80px 0 44px;
   text-transform: capitalize;
@@ -144,19 +137,19 @@ h1,
 }
 
 .countdown .time:nth-child(1) small {
-  color: var(--darkturquoise);
+  color: darkturquoise;
 }
 
 .countdown .time:nth-child(2) small {
-  color: var(--darkgoldenrod);
+  color: darkgoldenrod;
 }
 
 .countdown .time:nth-child(3) small {
-  color: var(--darkgreen);
+  color: darkgreen;
 }
 
 .countdown .time:nth-child(4) small {
-  color: var(--darkred);
+  color: darkred;
 }
 
 @media screen and (max-width: 1035px) {

@@ -9,6 +9,7 @@ const cacheAssets = [
     '/maskable_icon.png',
     '/favicon.ico',
     '/safari-pinned-tab.svg',
+    '/site.webmanifest'
 ];
 
 self.addEventListener('install', (event) => {
